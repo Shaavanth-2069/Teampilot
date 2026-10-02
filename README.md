@@ -1,7 +1,7 @@
-# SaaS Billing
+# SaaS Account Settings
 
 ## 1. What the UI pattern is
-A billing workspace for invoices, payment methods, plan status and spending insights.
+A tabbed settings center covering profile, security, notifications and preferences.
 
 ## 2. Where it is commonly used
 This pattern appears in modern SaaS products, internal business tools, B2B platforms, startup products, and team collaboration software.
