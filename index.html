@@ -1,6 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SaaS Account Settings template"><title>SaaS Account Settings · TeamPilot</title><link rel="stylesheet" href="style.css"></head>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SaaS Team Management template"><title>SaaS Team Management · TeamPilot</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="nav"><div class="container nav-inner"><a class="brand" href="../saas-landing-page/index.html"><img class="brand-mark team-logo" src="../assets/teampilot-logo.png" alt="TeamPilot logo"><span>TeamPilot</span></a><nav class="navlinks"><a href="../saas-landing-page/index.html" >Landing</a><a href="../saas-dashboard/index.html" >Dashboard</a><a href="../saas-team-management/index.html" >Team</a><a href="../saas-user-management/index.html" >Users</a><a href="../saas-integrations/index.html" >Integrations</a><a href="../saas-collaboration-workspace/index.html" >Workspace</a></nav><a class="btn primary" href="#contact">Contact</a></div></header>
+<header class="nav"><div class="container nav-inner"><a class="brand" href="../saas-landing-page/index.html"><img class="brand-mark team-logo" src="../assets/teampilot-logo.png" alt="TeamPilot logo"><span>TeamPilot</span></a><nav class="navlinks"><a href="../saas-landing-page/index.html" >Landing</a><a href="../saas-dashboard/index.html" >Dashboard</a><a href="../saas-team-management/index.html" class=active>Team</a><a href="../saas-user-management/index.html" >Users</a><a href="../saas-integrations/index.html" >Integrations</a><a href="../saas-collaboration-workspace/index.html" >Workspace</a></nav><a class="btn primary" href="#contact">Contact</a></div></header>
 <section class="demo-intro" id="postCounterDemo">
   <div class="container demo-frame reveal">
     <div class="demo-title">
@@ -16,15 +16,21 @@
 </section>
 
     <section class="hero"><div class="container hero-grid">
-      <div class="reveal"><div class="eyebrow">SaaS Template Collection · SaaS Account Settings</div>
+      <div class="reveal"><div class="eyebrow">SaaS Template Collection · SaaS Team Management</div>
       <h1>Build a <span>team-first</span> SaaS experience.</h1>
-      <p>A tabbed settings center covering profile, security, notifications and preferences. Designed as an original, responsive template for the hackathon.</p>
+      <p>A collaborative team console with editable member profiles, roles, status and activity. Designed as an original, responsive template for the hackathon.</p>
       <div class="actions"><a class="btn primary" href="#demo">Explore template</a><a class="btn" href="#team">Meet the team</a></div></div>
       <div class="orb tilt reveal" aria-hidden="true"></div>
     </div></section>
 <main>
-<section class="section" id="demo"><div class="container grid-2"><aside class="card reveal"><div class="eyebrow">Settings</div><h2>Account</h2><div style="display:grid;gap:8px;margin-top:20px"><button class="btn primary">Profile</button><button class="btn">Security</button><button class="btn">Notifications</button><button class="btn">Preferences</button></div></aside><article class="card reveal"><h3>Profile information</h3><p class="muted">Update your public workspace identity.</p><div class="form-grid"><div class="field"><label>Display name</label><input class="input" value="G.SHAAVANTH"></div><div class="field"><label>Role</label><input class="input" value="Team Leader"></div><div class="field"><label>Email</label><input class="input" value="shaavanth@example.com"></div><div class="field"><label>Timezone</label><select class="select"><option>Asia/Kolkata</option><option>UTC</option></select></div></div><button class="btn primary" style="margin-top:18px" onclick="alert('Settings saved locally for demo.')">Save changes</button></article></div></section>
-</main>
+<section class="section" id="demo"><div class="container"><div class="section-head"><div><div class="eyebrow">People operations</div><h2>Team management.</h2><p class="muted">Edit member details below. Changes persist in this browser using localStorage.</p></div><button class="btn primary" onclick="document.querySelector('#teamModal').classList.add('open')">Manage selected</button></div><div class="card reveal"><table class="table"><thead><tr><th>Member</th><th>Role</th><th>Focus</th><th>Status</th><th>Action</th></tr></thead><tbody id="teamTableBody"></tbody></table></div></div></section>
+<section class="section" id="team"><div class="container"><div class="section-head"><div><div class="eyebrow">Leadership</div><h2>Team identity.</h2></div></div><div class="grid" id="memberCards"></div></div></section>
+<div class="modal" id="teamModal"><div class="modal-box"><div class="modal-head"><h2>Edit team member</h2><button class="close" data-close>×</button></div><form id="teamForm"><div class="form-grid">
+    <div class="field"><label>Name</label><input class="input" name="name" required></div>
+    <div class="field"><label>Role</label><input class="input" name="role" required></div>
+    <div class="field"><label>Details</label><input class="input" name="detail" required></div>
+    <div class="field"><label>Email</label><input class="input" name="email" type="email" required></div>
+    </div><div class="actions"><button class="btn primary">Save changes</button><button type="button" class="btn" data-close>Cancel</button></div></form></div></div></main>
 
 <section class="section"><div class="container story-grid">
   <article class="card reveal scroll-3d">

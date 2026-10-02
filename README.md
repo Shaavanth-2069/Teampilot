@@ -1,7 +1,7 @@
-# SaaS Account Settings
+# SaaS Team Management
 
 ## 1. What the UI pattern is
-A tabbed settings center covering profile, security, notifications and preferences.
+A collaborative team console with editable member profiles, roles, status and activity.
 
 ## 2. Where it is commonly used
 This pattern appears in modern SaaS products, internal business tools, B2B platforms, startup products, and team collaboration software.
