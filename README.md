@@ -1,7 +1,7 @@
-# SaaS Pricing
+# SaaS Billing
 
 ## 1. What the UI pattern is
-Interactive pricing cards with monthly/yearly billing and feature comparisons.
+A billing workspace for invoices, payment methods, plan status and spending insights.
 
 ## 2. Where it is commonly used
 This pattern appears in modern SaaS products, internal business tools, B2B platforms, startup products, and team collaboration software.
