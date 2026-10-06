@@ -1,0 +1,322 @@
+<!doctype html><html><head>
+<style>
+.counter-screen{
+  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;
+  background:#02040b;overflow:hidden;
+  transition:opacity .65s ease,visibility .65s ease;
+}
+.counter-screen::before{
+  content:"";position:absolute;width:720px;height:720px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,126,255,.24),transparent 65%);
+  animation:counterPulse 2s ease-in-out infinite;
+}
+.counter-screen.done{opacity:0;visibility:hidden;pointer-events:none}
+.counter-wrap{position:relative;text-align:center;padding:40px}
+.counter-logo{
+  width:150px;height:150px;object-fit:contain;display:block;margin:0 auto 22px;
+  filter:drop-shadow(0 0 28px rgba(0,119,255,.55));
+  animation:logoFloat 1.8s ease-in-out infinite;
+}
+.counter{
+  font-size:clamp(110px,20vw,240px);line-height:.8;font-weight:1000;
+  letter-spacing:-.09em;
+  background:linear-gradient(90deg,#fff,#2087ff,#61c7ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.counter-label{
+  margin-top:28px;color:#9fb4d9;font-size:13px;font-weight:800;
+  letter-spacing:.28em;text-transform:uppercase;
+}
+.counter-line{
+  width:min(420px,70vw);height:3px;margin:22px auto 0;
+  background:rgba(255,255,255,.10);border-radius:999px;overflow:hidden;
+}
+.counter-line span{
+  display:block;height:100%;width:0;
+  background:linear-gradient(90deg,#006eff,#35c8ff);
+  box-shadow:0 0 18px rgba(0,126,255,.8);
+}
+@keyframes logoFloat{50%{transform:translateY(-10px) scale(1.035)}}
+@keyframes counterPulse{50%{transform:scale(1.12);opacity:.7}}
+</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TeamPilot UI Template Collection</title><link rel="stylesheet" href="saas-landing-page/style.css">
+<style>
+/* TeamPilot root demo page */
+.tp-demo{position:relative;overflow:hidden;padding:100px 0 70px}
+.tp-demo:before{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.055;
+  background:url("assets/teampilot-logo.png") center/520px no-repeat;
+  filter:grayscale(1);transform:rotate(-8deg) scale(1.1);
+}
+.tp-demo-hero{min-height:72vh;display:grid;place-items:center;text-align:center}
+.tp-demo-hero img{width:min(210px,42vw);filter:drop-shadow(0 0 45px rgba(0,126,255,.42));animation:tpFloat 5s ease-in-out infinite}
+.tp-demo-hero h1{font-size:clamp(56px,10vw,128px);line-height:.86;letter-spacing:-.065em;margin:28px 0 22px}
+.tp-demo-hero h1 span{background:linear-gradient(90deg,#fff,#1987ff,#68d7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tp-demo-hero p{max-width:720px;margin:auto;font-size:18px}
+.tp-scroll-hint{margin-top:45px;display:inline-flex;flex-direction:column;gap:8px;color:#8ea4c7;font-size:12px;text-transform:uppercase;letter-spacing:.2em}
+.tp-scroll-hint b{font-size:25px;animation:tpDown 1.2s infinite}
+@keyframes tpFloat{50%{transform:translateY(-14px) rotate(1deg)}}@keyframes tpDown{50%{transform:translateY(7px)}}
+
+.tp-marquee{width:100%;overflow:hidden;border-block:1px solid rgba(255,255,255,.12);background:rgba(0,76,180,.08);padding:18px 0;transform:rotate(-1deg) scale(1.03);margin:35px 0 110px}
+.tp-marquee-track{display:flex;width:max-content;animation:tpMarquee 20s linear infinite}
+.tp-marquee span{font-size:clamp(38px,6vw,82px);font-weight:1000;letter-spacing:-.055em;padding-right:55px;white-space:nowrap;color:#fff}
+.tp-marquee span i{font-style:normal;color:#1687ff}
+@keyframes tpMarquee{to{transform:translateX(-50%)}}
+
+.tp-section-title{text-align:center;max-width:800px;margin:0 auto 45px}
+.tp-section-title h2{font-size:clamp(38px,6vw,72px);line-height:.92;letter-spacing:-.055em;margin:12px 0}
+.tp-contact{position:relative;overflow:hidden;padding:110px 0 130px;background:linear-gradient(180deg,transparent,rgba(0,77,180,.10))}
+.tp-contact:after{
+  content:"TeamPilot";position:absolute;right:-70px;bottom:-50px;font-size:clamp(100px,18vw,260px);
+  font-weight:1000;color:rgba(23,130,255,.035);pointer-events:none;transform:rotate(-8deg)
+}
+.tp-contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
+.tp-leader{padding:38px}
+.tp-leader-photo{width:92px;height:92px;border-radius:28px;object-fit:contain;background:#06132a;padding:8px;border:1px solid rgba(45,145,255,.35);box-shadow:0 0 35px rgba(0,126,255,.18)}
+.tp-contact-list{display:grid;gap:13px;margin-top:22px}
+.tp-contact-item{padding:14px 16px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(255,255,255,.025)}
+.tp-footer-brand{font-size:clamp(38px,7vw,82px);font-weight:1000;letter-spacing:-.06em}
+@media(max-width:760px){.tp-contact-grid{grid-template-columns:1fr}.tp-demo{padding-top:70px}.tp-marquee{margin-bottom:70px}}
+</style>
+
+<style>
+/* ================= TEAM CUBE + GREEN / BLACK THEME ================= */
+:root{--tp-green:#20e879;--tp-green2:#8affb8;--tp-black:#020704;--tp-panel:#07120c;--tp-line:rgba(54,255,139,.18)}
+html{scroll-behavior:smooth}body{background:radial-gradient(circle at 15% 5%,rgba(32,232,121,.13),transparent 30%),radial-gradient(circle at 85% 40%,rgba(0,110,48,.14),transparent 35%),#020704!important;color:#f4fff8}
+body:before{background-image:linear-gradient(rgba(72,255,145,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(72,255,145,.035) 1px,transparent 1px)!important}
+.tp-demo:before{opacity:.075!important;filter:grayscale(1) brightness(.75)!important}
+.tp-demo-hero h1 span,.tp-footer-brand span{background:linear-gradient(90deg,#fff,var(--tp-green),var(--tp-green2),#fff)!important;-webkit-background-clip:text!important;color:transparent!important}
+.tp-marquee{background:rgba(0,80,36,.16)!important;border-color:var(--tp-line)!important}
+.tp-marquee span i{color:var(--tp-green)!important}
+.tp-contact{background:linear-gradient(180deg,transparent,rgba(0,100,43,.13))!important}
+.tp-contact:after{color:rgba(32,232,121,.035)!important}
+
+.team-cube-section{padding:110px 0 125px;position:relative;overflow:hidden}
+.team-cube-section:before{content:"";position:absolute;width:520px;height:520px;left:50%;top:30%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(32,232,121,.12),transparent 67%);filter:blur(15px);pointer-events:none}
+.team-cube-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:65px;align-items:center}
+.team-copy h2{font-size:clamp(44px,6vw,78px);line-height:.9;letter-spacing:-.06em;margin:12px 0 22px}
+.team-copy h2 span{color:var(--tp-green)}
+.team-copy p{font-size:18px;color:#9eb8a8;max-width:590px}
+.team-cube-wrap{width:100%;min-height:560px;display:grid;place-items:center;perspective:1400px}
+.team-cube-stage{width:330px;height:430px;position:relative;perspective:1400px}
+.team-cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.2,.75,.2,1);will-change:transform}
+.team-face{position:absolute;inset:0;padding:30px;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,rgba(10,29,19,.98),rgba(2,10,6,.98));border:1px solid rgba(52,255,139,.30);box-shadow:0 25px 90px rgba(0,0,0,.55),inset 0 0 55px rgba(32,232,121,.045);backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.team-face:nth-child(1){transform:rotateY(0deg) translateZ(165px)}
+.team-face:nth-child(2){transform:rotateY(90deg) translateZ(165px)}
+.team-face:nth-child(3){transform:rotateY(180deg) translateZ(165px)}
+.team-face:nth-child(4){transform:rotateY(-90deg) translateZ(165px)}
+.team-face:before{content:"";position:absolute;right:-70px;top:-70px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(32,232,121,.18),transparent 67%)}
+.card-chip{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}.chip{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--tp-green);font-weight:900}.cube-logo{width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 0 14px rgba(32,232,121,.4))}
+.member-avatar{width:88px;height:88px;border-radius:25px;display:grid;place-items:center;background:linear-gradient(145deg,#0b2c1a,#06110b);border:1px solid rgba(138,255,184,.35);color:var(--tp-green2);font-size:30px;font-weight:1000;box-shadow:0 0 35px rgba(32,232,121,.11);position:relative;z-index:1}
+.member-name{font-size:clamp(28px,4vw,39px);line-height:.95;letter-spacing:-.055em;margin:20px 0 9px;position:relative;z-index:1}.member-role{color:var(--tp-green2);font-weight:850;font-size:13px;text-transform:uppercase;letter-spacing:.11em;position:relative;z-index:1}.member-detail{color:#9eb8a8;font-size:13px;line-height:1.55;position:relative;z-index:1}.member-id{display:flex;justify-content:space-between;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,.10);font-size:11px;color:#728b7b;position:relative;z-index:1}
+.cube-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:25px}.cube-btn{width:45px;height:45px;border-radius:50%;border:1px solid rgba(32,232,121,.25);background:#06140c;color:#dffff0;font-size:18px;cursor:pointer}.cube-btn:hover{background:#0b2817;border-color:rgba(32,232,121,.65);transform:translateY(-2px)}.cube-dots{display:flex;gap:7px;margin:0 8px}.cube-dot{width:8px;height:8px;border-radius:50%;background:#294435;cursor:pointer}.cube-dot.active{background:var(--tp-green);box-shadow:0 0 13px rgba(32,232,121,.8)}
+.edit-team-panel{margin-top:35px;padding:22px;border:1px solid rgba(32,232,121,.16);border-radius:22px;background:rgba(3,12,7,.62)}.edit-team-panel summary{cursor:pointer;color:var(--tp-green2);font-weight:900}.edit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:20px}.edit-member{padding:17px;border:1px solid rgba(255,255,255,.08);border-radius:17px;background:rgba(255,255,255,.025)}.edit-member h4{margin:0 0 12px}.edit-member .field{margin-top:9px}.save-team{margin-top:16px;background:linear-gradient(135deg,#0fae55,#20e879)!important;color:#001a0b!important;border:0!important}
+.tp-team-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(32,232,121,.2);border-radius:999px;background:rgba(32,232,121,.06);color:var(--tp-green2);font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:900px){.team-cube-layout{grid-template-columns:1fr;gap:35px}.team-copy{text-align:center}.team-copy p{margin-left:auto;margin-right:auto}.team-cube-wrap{min-height:520px}.edit-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.team-cube-stage{width:290px;height:390px}.team-face:nth-child(1){transform:rotateY(0deg) translateZ(145px)}.team-face:nth-child(2){transform:rotateY(90deg) translateZ(145px)}.team-face:nth-child(3){transform:rotateY(180deg) translateZ(145px)}.team-face:nth-child(4){transform:rotateY(-90deg) translateZ(145px)}.team-cube-wrap{overflow:hidden}.team-face{padding:23px}.member-name{font-size:29px}}
+</style>
+</head><body>
+
+<div class="counter-screen" id="counterScreen" aria-label="Loading TeamPilot">
+  <div class="counter-wrap">
+    <img class="counter-logo" src="assets/teampilot-logo.png" alt="TeamPilot logo">
+    <div class="counter" id="counterNumber">1</div>
+    <div class="counter-label">TeamPilot · Loading workspace</div>
+    <div class="counter-line"><span id="counterLine"></span></div>
+  </div>
+</div>
+
+<main>
+  <!-- This is the demo page shown after the 1→100 intro animation -->
+  <section class="tp-demo" id="demo">
+    <div class="container tp-demo-hero">
+      <div>
+        <img src="assets/teampilot-logo.png" alt="TeamPilot logo">
+        <div class="eyebrow" style="margin-top:28px">UI TEMPLATE COLLECTION · MODERN SAAS</div>
+        <h1>Welcome to<br><span>TeamPilot</span></h1>
+        <p class="muted">
+          A modern SaaS Team Management experience created for our UI Template Collection Hackathon.
+          Scroll down to explore the templates, our collaboration story, and the team behind the project.
+        </p>
+        <div class="actions" style="justify-content:center;margin-top:30px">
+          <a class="btn primary" href="#templates">Explore templates ↓</a>
+          <a class="btn" href="#contact">Contact Team Leader</a>
+        </div>
+        <div class="tp-scroll-hint">Scroll to explore <b>↓</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company name horizontal scrolling line -->
+  <section class="tp-marquee" aria-label="TeamPilot company name">
+    <div class="tp-marquee-track">
+      <span>TEAM<span style="color:#1687ff">PILOT</span> <i>✦</i> TEAM<span style="color:#1687ff">PILOT</span> <i>✦</i> </span>
+      <span>TEAM<span style="color:#1687ff">PILOT</span> <i>✦</i> TEAM<span style="color:#1687ff">PILOT</span> <i>✦</i> </span>
+    </div>
+  </section>
+
+  
+<!-- Team members: 3D rotating ID-card cube -->
+<section class="team-cube-section" id="team">
+  <div class="container">
+    <div class="team-cube-layout">
+      <div class="team-copy">
+        <span class="tp-team-tag">4 members · one team</span>
+        <h2>Meet the <span>TeamPilot</span> team.</h2>
+        <p>Each member appears one-by-one as a digital ID card on a rotating 3D cube. Use the arrows to rotate manually, or let it auto-rotate every 3.5 seconds.</p>
+        <div class="actions" style="margin-top:25px">
+          <a class="btn primary" href="#contact">Contact the team</a>
+          <a class="btn" href="#templates">View templates</a>
+        </div>
+        <details class="edit-team-panel">
+          <summary>✎ Edit all team member details</summary>
+          <form id="teamEditForm">
+            <div class="edit-grid" id="editGrid"></div>
+            <button class="btn save-team" type="submit">Save all team details</button>
+            <button class="btn" type="button" id="resetTeam" style="margin-left:8px">Reset defaults</button>
+          </form>
+        </details>
+      </div>
+      <div>
+        <div class="team-cube-wrap">
+          <div class="team-cube-stage">
+            <div class="team-cube" id="teamCube"></div>
+          </div>
+        </div>
+        <div class="cube-controls">
+          <button class="cube-btn" id="cubePrev" aria-label="Previous member">←</button>
+          <div class="cube-dots" id="cubeDots"></div>
+          <button class="cube-btn" id="cubeNext" aria-label="Next member">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="templates">
+    <div class="container">
+      <div class="tp-section-title">
+        <div class="eyebrow">Live demo collection</div>
+        <h2>Explore the SaaS interfaces.</h2>
+        <p class="muted">Each card opens a separate template. The individual templates do not show the startup counter.</p>
+      </div>
+      <div class="grid">
+        <a class="card" href="saas-landing-page/index.html"><h3>SaaS Landing Page</h3><p class="muted">Product landing experience.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-dashboard/index.html"><h3>SaaS Dashboard</h3><p class="muted">KPIs, activity and metrics.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-onboarding/index.html"><h3>SaaS Onboarding</h3><p class="muted">Multi-step workspace setup.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-login-signup/index.html"><h3>SaaS Login / Signup</h3><p class="muted">Authentication interface.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-pricing/index.html"><h3>SaaS Pricing</h3><p class="muted">Interactive pricing plans.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-billing/index.html"><h3>SaaS Billing</h3><p class="muted">Invoices and billing workspace.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-account-settings/index.html"><h3>SaaS Account Settings</h3><p class="muted">Profile and security settings.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-team-management/index.html"><h3>SaaS Team Management</h3><p class="muted">Editable team member details.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-user-management/index.html"><h3>SaaS User Management</h3><p class="muted">Searchable user administration.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-integrations/index.html"><h3>SaaS Integrations</h3><p class="muted">Connect your product stack.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-help-center/index.html"><h3>SaaS Help Center</h3><p class="muted">Support and knowledge hub.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-documentation/index.html"><h3>SaaS Documentation</h3><p class="muted">Developer documentation UI.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-calendar/index.html"><h3>SaaS Calendar</h3><p class="muted">Team scheduling workspace.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-file-management/index.html"><h3>SaaS File Management</h3><p class="muted">Cloud files and storage.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-collaboration-workspace/index.html"><h3>SaaS Collaboration Workspace</h3><p class="muted">Tasks, discussion and files.</p><span class="btn primary">Open →</span></a>
+        <a class="card" href="saas-command-palette/index.html"><h3>SaaS Command Palette</h3><p class="muted">Keyboard-driven commands.</p><span class="btn primary">Open →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section at the bottom of the scrolling demo page -->
+  <section class="tp-contact" id="contact">
+    <div class="container">
+      <div class="tp-section-title">
+        <div class="eyebrow">Contact us</div>
+        <h2>Meet the TeamPilot leader.</h2>
+        <p class="muted">Scroll to the bottom of the demo to find the team leader and project contact details.</p>
+      </div>
+
+      <div class="tp-contact-grid">
+        <article class="card tp-leader">
+          <img class="tp-leader-photo" src="assets/teampilot-logo.png" alt="TeamPilot">
+          <div class="eyebrow" style="margin-top:22px">Team Leader</div>
+          <h2 style="font-size:clamp(38px,6vw,68px);line-height:.95;margin:8px 0">G.SHAAVANTH</h2>
+          <p class="muted" style="font-size:18px">Product & Project Lead · TeamPilot UI Template Collection</p>
+          <div class="tp-contact-list">
+            <div class="tp-contact-item"><b>Role</b><br><span class="muted">Team Leader / Project Coordinator</span></div>
+            <div class="tp-contact-item"><b>Team</b><br><span class="muted">Y.CHAKRADHAR REDDY · M.SURYA NIVAS REDDY · J. MAHESH YADAV</span></div>
+          </div>
+        </article>
+
+        <article class="card tp-leader">
+          <div class="eyebrow">Project contact</div>
+          <h3 style="font-size:32px">TeamPilot</h3>
+          <p class="muted">Modern SaaS · Team Management · UI Template Collection</p>
+          <div class="tp-contact-list">
+            <div class="tp-contact-item"><b>Project</b><br><span class="muted">UI Template Collection Hackathon</span></div>
+            <div class="tp-contact-item"><b>Technology</b><br><span class="muted">HTML5 · CSS3 · JavaScript</span></div>
+          </div>
+          <a class="btn primary" href="#demo" style="margin-top:24px">↑ Back to demo</a>
+        </article>
+      </div>
+
+      <div style="text-align:center;margin-top:90px">
+        <div class="tp-footer-brand">TEAM<span style="color:#1687ff">PILOT</span></div>
+        <p class="muted">Build UI. Collaborate. Contribute.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  const screen=document.getElementById("counterScreen");
+  const number=document.getElementById("counterNumber");
+  const line=document.getElementById("counterLine");
+  if(!screen||!number)return;
+  const start=performance.now();
+  const duration=2000;
+  function animate(now){
+    const progress=Math.min((now-start)/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    number.textContent=Math.max(1,Math.floor(eased*100));
+    if(line) line.style.width=(eased*100)+"%";
+    if(progress<1){
+      requestAnimationFrame(animate);
+    }else{
+      number.textContent="100";
+      if(line) line.style.width="100%";
+      setTimeout(()=>screen.classList.add("done"),250);
+    }
+  }
+  requestAnimationFrame(animate);
+})();
+</script>
+
+<script>
+/* TeamPilot 3D member cube + editable team directory */
+(function(){
+  const defaults=[
+    {name:'G.SHAAVANTH',role:'Team Leader / Project Coordinator',email:'shaavanth@teampilot.local',phone:'+91 XXXXX XXXXX',detail:'Project coordination, product direction, team planning and overall TeamPilot delivery.'},
+    {name:'Y.CHAKRADHAR REDDY',role:'UI Developer / Frontend & Interaction',email:'chakradhar@teampilot.local',phone:'+91 XXXXX XXXXX',detail:'Frontend interface development, responsive layouts, animations and interaction design.'},
+    {name:'M.SURYA NIVAS REDDY',role:'UI Developer / Dashboard & Data UI',email:'suryanivas@teampilot.local',phone:'+91 XXXXX XXXXX',detail:'Dashboard layouts, data visualization components, responsive UI and JavaScript implementation.'},
+    {name:'J. MAHESH YADAV',role:'UI Developer / UX & Components',email:'mahesh@teampilot.local',phone:'+91 XXXXX XXXXX',detail:'User experience, reusable UI components, visual polish and cross-device interface testing.'},
+  ];
+  const key='teampilot_team_members_v2';
+  let members=JSON.parse(localStorage.getItem(key)||'null')||defaults;
+  const cube=document.getElementById('teamCube'), dots=document.getElementById('cubeDots');
+  const grid=document.getElementById('editGrid'), form=document.getElementById('teamEditForm');
+  if(!cube||!dots||!grid)return;
+  let index=0, timer;
+  const initials=n=>n.replace(/[^A-Za-z ]/g,'').split(' ').filter(Boolean).map(x=>x[0]).slice(0,2).join('').toUpperCase();
+  function render(){
+    cube.innerHTML=members.map((m,i)=>`<article class="team-face"><div class="card-chip"><span class="chip">TeamPilot · ID ${String(i+1).padStart(2,'0')}</span><img class="cube-logo" src="assets/teampilot-logo.png" alt="TeamPilot"></div><div><div class="member-avatar">${initials(m.name)}</div><div class="member-name">${m.name}</div><div class="member-role">${m.role}</div><p class="member-detail">${m.detail}</p></div><div class="member-id"><span>${m.email}</span><span>${m.phone}</span></div></article>`).join('');
+    dots.innerHTML=members.map((_,i)=>`<button class="cube-dot ${i===index?'active':''}" data-i="${i}" aria-label="Show member ${i+1}"></button>`).join('');
+    dots.querySelectorAll('.cube-dot').forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));
+    grid.innerHTML=members.map((m,i)=>`<div class="edit-member"><h4>Member ${i+1}</h4><div class="field"><label>Name</label><input class="input" data-k="name" data-i="${i}" value="${esc(m.name)}"></div><div class="field"><label>Role</label><input class="input" data-k="role" data-i="${i}" value="${esc(m.role)}"></div><div class="field"><label>Email</label><input class="input" data-k="email" data-i="${i}" value="${esc(m.email)}"></div><div class="field"><label>Phone</label><input class="input" data-k="phone" data-i="${i}" value="${esc(m.phone)}"></div><div class="field"><label>Details</label><textarea data-k="detail" data-i="${i}" rows="3">${esc(m.detail)}</textarea></div></div>`).join('');
+    apply();
+  }
+  function esc(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+  function apply(){cube.style.transform=`rotateY(${-index*90}deg)`;dots.querySelectorAll('.cube-dot').forEach((d,i)=>d.classList.toggle('active',i===index))}
+  function go(i){index=(i+members.length)%members.length;apply();restart()}
+  function restart(){clearInterval(timer);timer=setInterval(()=>go(index+1),3500)}
+  document.getElementById('cubePrev').addEventListener('click',()=>go(index-1));
+  document.getElementById('cubeNext').addEventListener('click',()=>go(index+1));
+  form.addEventListener('submit',e=>{e.preventDefault();form.querySelectorAll('[data-k]').forEach(el=>members[+el.dataset.i][el.dataset.k]=el.value.trim());localStorage.setItem(key,JSON.stringify(members));render();alert('All TeamPilot member details have been saved in this browser.');});
+  document.getElementById('resetTeam').addEventListener('click',()=>{members=defaults.map(x=>({...x}));localStorage.removeItem(key);render();});
+  render();restart();
+})();
+</script>
+</body></html>
